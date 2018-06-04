@@ -1,0 +1,45 @@
+<% include ../partials/header %>
+
+<div class="row" style="margin-top: 20px;">
+	<div class="container">
+		<div class="col s12">
+			<a href="/mahasiswa/add" class="btn btn-primary btn-sm">Tambah Mahasiswa</a>
+			<br>
+			<br>
+			<% if (items.length > 0) { %>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<td>No</td>
+						<td>Nama</td>
+						<td>Umur</td>
+						<td>Alamat</td>
+						<td>Action</td>
+					</tr>
+				</thead>
+				<tbody>
+					<% items.forEach(function(item, index){ %>
+					<tr>
+						<td><%= index + 1 %></td>
+						<td><%= item.nama %></td>
+						<td><%= item.umur %></td>
+						<td><%= item.alamat %></td>
+						<td><a href="/mahasiswa/edit/<%= item.id %>" class="btn btn-sm btn-warning">Edit</a><a href="/mahasiswa/delete/<%= item.id %>" class="btn btn-sm btn-danger">Hapus</a></td>
+					</tr>
+					<% }); %>
+				</tbody>
+			</table>
+			<% }else{ %>
+					<tr>
+						<td colspan="8">TIDAK ADA DATA!</td>
+					</tr>	
+			<%}%>
+		</div>
+	</div>
+</div>
+<!-- 
+<table>
+	
+</table> -->
+
+<% include ../partials/footer %>

@@ -1,0 +1,23 @@
+<% include ../partials/header %>
+<div class="row">
+  <div class="container" style="margin-top: 20px;">
+    <form action="http://localhost:3000/mahasiswa/edit/progress/<%= item[0].id %>" method="post">
+      <input type="hidden" name="id" value="<%= item[0].id %>">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Nama</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" id="name" name="nama" placeholder="Enter name" value="<%= item[0].nama %>">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your name with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Umur</label>
+        <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Umur" id="umur" name="umur" value="<%= item[0].umur %>">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword2">Alamat</label>
+        <input type="text" class="form-control" id="exampleInputPassword2" placeholder="Alamat" id="Alamat" name="alamat" value="<%= item[0].alamat %>">
+      </div>
+      <button type="submit" class="col s12 btn btn-primary">Edit</button>
+    </form>
+  </div>
+</div>
+<% include ../partials/footer %>
